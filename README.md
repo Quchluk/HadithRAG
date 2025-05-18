@@ -1,49 +1,46 @@
+# 🕌 HadithRAG
 
-⸻
+**HadithRAG** is an open-source **Retrieval-Augmented Generation (RAG)** application designed for semantic question answering across large-scale hadith corpora. It integrates vector-based search (via **ChromaDB**) with modern language models to offer fast and intelligent access to classical Islamic texts.
 
-HadithRAG
+> 🔬 **For researchers, students, and developers** at the intersection of Islamic studies and computational linguistics.
 
-HadithRAG is an open-source Retrieval-Augmented Generation (RAG) application designed to enable semantic question answering over large-scale hadith corpora. By leveraging vector-based search with ChromaDB and modern language models, it provides researchers, students, and developers with efficient access to classical Islamic texts.
+---
 
-This project is intended to support digital research in Islamic studies, combining computational linguistics and scalable text retrieval to process thousands of narrations across canonical collections.
+## 🚧 Status
 
-⚠️ The project is under active development. Core components are operational, but the interface and retrieval pipeline are being continuously improved.
+**Under active development.**  
+Core components are functional, but the interface, inference logic, and retrieval pipeline are being continuously refined.
 
-⸻
+---
 
-Features
-	•	Preprocessed hadith corpus in .parquet format
-	•	Vector index based on ChromaDB (excluded from repository due to GitHub limitations)
-	•	Local build and CLI-based retrieval interface
-	•	Modular and scalable architecture suitable for large classical corpora
+## ✨ Features
 
-⸻
+- 📦 Preprocessed hadith corpus in `.parquet` format  
+- 🧠 Vector index based on **ChromaDB** (excluded from repo; see below)
+- ⚙️ CLI-based retrieval and index builder
+- 🧱 Modular, scalable pipeline for large classical corpora
 
-Status
-
-🧪 This project is in early development. Contributions, issue reports, and suggestions are welcome.
-
-⸻
+---
 
 ## 📚 Hadith Corpus
 
-This project is built upon one of the most comprehensive open-access datasets in the field of Islamic studies: the [Open Hadith Data](https://github.com/mhashim6/Open-Hadith-Data) collection curated by [Muhammad Hashim (mhashim6)](https://github.com/mhashim6). The dataset brings together over **50,000 authenticated hadiths** drawn from **nine classical collections**, including the **Kutub al-Sittah (The Six Canonical Books)**, which constitute the core of Sunni Islam’s hadith tradition.
+This project builds on the [Open Hadith Data](https://github.com/mhashim6/Open-Hadith-Data) collection curated by [Muhammad Hashim (mhashim6)](https://github.com/mhashim6). The corpus contains **over 50,000 authenticated hadiths** from nine canonical works, including the **Kutub al-Sittah (The Six Books)** — foundational to Sunni Islam.
 
-These texts are foundational not only in Islamic theology (*ʿaqīdah*) and jurisprudence (*fiqh*), but also in historical linguistics, ethics, and Islamic intellectual history. For centuries, they have served as a basis for scholarly discourse, legal reasoning (*ijtihād*), and social practice across the Muslim world. Their canonical status makes them a uniquely valuable subject of computational exploration.
+These texts are central to Islamic theology (*ʿaqīdah*), law (*fiqh*), ethics, and intellectual tradition. Their inclusion here enables scalable, high-resolution analysis of a core civilizational archive using modern computational tools.
 
 ### 📘 Included Collections:
 
-The dataset includes the following works, each provided in both **diacritized and undiacritized** Arabic, formatted for computational parsing:
+Each hadith is provided in **diacritized** and **undiacritized** Arabic, with metadata fields for book, chapter, isnād, and more.
 
-- **Sahih al-Bukhari** (صحيح البخاري) — *Imam al-Bukhari (d. 870 CE)*
-- **Sahih Muslim** (صحيح مسلم) — *Muslim ibn al-Hajjaj (d. 875 CE)*
-- **Sunan Abu Dawud** (سُنن أبي داود) — *Abu Dawud al-Sijistani (d. 889 CE)*
-- **Jami‘ al-Tirmidhi** (جامع الترمذي) — *al-Tirmidhi (d. 892 CE)*
-- **Sunan al-Nasa’i** (السنن الصغرى) — *al-Nasa’i (d. 915 CE)*
-- **Sunan Ibn Majah** (سُنن ابن ماجه) — *Ibn Majah (d. 887 CE)*
-- **Musnad Ahmad ibn Hanbal** (مُسند الإمام أحمد بن حنبل) — *Ahmad ibn Hanbal (d. 855 CE)*
-- **Muwatta Malik** (موطأ الإمام مالك) — *Malik ibn Anas (d. 795 CE)*
-- **Sunan al-Darimi** (سُنن الدارمي) — *al-Darimi (d. 869 CE)*
+- `📖` **Sahih al-Bukhari** (صحيح البخاري) — *Imam al-Bukhari*
+- `📖` **Sahih Muslim** (صحيح مسلم) — *Muslim ibn al-Hajjaj*
+- `📖` **Sunan Abu Dawud** (سُنن أبي داود) — *Abu Dawud al-Sijistani*
+- `📖` **Jami‘ al-Tirmidhi** (جامع الترمذي) — *al-Tirmidhi*
+- `📖` **Sunan al-Nasa’i** (السنن الصغرى) — *al-Nasa’i*
+- `📖` **Sunan Ibn Majah** (سُنن ابن ماجه) — *Ibn Majah*
+- `📖` **Musnad Ahmad ibn Hanbal** (مسند الإمام أحمد) — *Ahmad ibn Hanbal*
+- `📖` **Muwatta Malik** (موطأ مالك) — *Malik ibn Anas*
+- `📖` **Sunan al-Darimi** (سُنن الدارمي) — *al-Darimi*
 
 Each entry includes full metadata such as book name, chapter, section, hadith number, and narrator chain (*isnād*), allowing for granular access and semantic filtering.
 
@@ -56,71 +53,72 @@ To optimize the corpus for high-performance machine learning and semantic retrie
 
 This conversion ensures:
 
-- **Efficient vector indexing** (via ChromaDB or similar frameworks)
-- **High-speed queries and filtering**
-- **Compatibility with large-scale RAG pipelines**
-- **Compact storage for 50k+ entries** in a single, load-efficient binary format
+- 🔍 **Efficient vector indexing** (via ChromaDB or similar frameworks)
+- 🚀 Fast queries over 50,000 entries
+- 🧩 Ideal for integration into ML/NLP pipelines
+- 🗜️ Compact storage with high I/O efficiency
 
 This dataset serves as the **semantic backbone** of the HadithRAG application, enabling both accurate question answering and scalable research workflows in the digital humanities and Islamic NLP.
 
-> 🧠 HadithRAG represents one of the first practical RAG frameworks applied to a complete canonical hadith corpus, setting a foundation for future semantic reasoning systems in religious and historical textual domains.
+> 🧠 *HadithRAG represents one of the first practical RAG frameworks applied to a complete canonical hadith corpus, setting a foundation for future semantic reasoning systems in religious and historical textual domains.*
 
-⸻
+---
 
-Rebuilding the Index
+## 🧱 Rebuilding the Index
 
-Due to GitHub’s file size restrictions, the chroma_hadith_index/ directory is not included in this repository.
+The `chroma_hadith_index/` folder is excluded due to GitHub's file size limits.
 
-To rebuild the index locally, run:
+To rebuild the index locally:
 
+```bash
 python build_hadith_chroma_index.py
+```
 
-Make sure to install the required packages beforehand (see below).
+> 📦 Install dependencies first (see below).
 
-⸻
+---
 
-Usage
+## 💡 Usage
 
-▶️ Usage examples will be provided here.
-Please refer to app.py for an entry point to the current CLI interface.
+Coming soon:  
+✅ Command-line queries  
+✅ Retrieval examples  
+✅ Full documentation
 
-⸻
+➡️ Entry point: `app.py`
 
-Planned Features
-	•	Web interface for interactive access
-	•	Multilingual output (Arabic, English, Russian)
-	•	Metadata-based filtering (by book, narrator, subject)
-	•	Integration with Hugging Face Spaces and Streamlit
-	•	Compatibility with GPU-accelerated backends
+---
 
-⸻
+## 🧭 Planned Features
 
-Quick Setup
+- 🌐 Web UI via Streamlit
+- 🌍 Multilingual output (Arabic / English / Russian)
+- 🔎 Metadata filtering (book, topic, narrator)
+- 🤗 HuggingFace Spaces integration
+- ⚡ GPU-accelerated backend support
 
-Clone the repository and install dependencies:
+---
 
+## ⚙️ Quick Start
+
+```bash
 git clone git@github.com:Quchluk/HadithRAG.git
 cd HadithRAG
-pip install -r requirements.txt  # ← to be added later
-
-Then run the index builder:
-
+pip install -r requirements.txt  # (coming soon)
 python build_hadith_chroma_index.py
+```
 
+---
 
-⸻
+## 👤 Author
 
-Author
+**Anton Smirnov**  
+🔗 GitHub: [Quchluk](https://github.com/Quchluk)
 
-Anton Smirnov
-GitHub: Quchluk
+---
 
-⸻
+## 📄 License
 
-License
+This project is licensed under the **MIT License**.
 
-📝 License will be added in a future release.
-
-⸻
-
-Если хочешь, я могу также добавить секцию с примерами запросов и выводов, когда ты их пришлёшь.
+---
