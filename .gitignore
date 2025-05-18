@@ -28,3 +28,5 @@ env/
 # Indexes (optional, if heavy or rebuildable)
 chroma_index/
 faiss_index/
+chroma_hadith_index/
+chroma_hadith_index/
