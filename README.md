@@ -89,13 +89,17 @@ Coming soon:
 
 ---
 
-## 🧭 Planned Features
+## 🚧 Planned Features
 
-- 🌐 Web UI via Streamlit
-- 🌍 Multilingual output (Arabic / English / Russian)
-- 🔎 Metadata filtering (book, topic, narrator)
-- 🤗 HuggingFace Spaces integration
-- ⚡ GPU-accelerated backend support
+* 📦 **Segmented Index Architecture** — build a cache-friendly vector index structure, allowing:
+  - 🔄 dynamic (re)loading of index segments
+  - ⚡ memory-efficient handling of large corpora
+  - 📥 partial downloads of index shards as needed
+* 🧠 **Question Answering (RAG)** — improve relevance and context-awareness in generated answers
+* 🗂️ **Advanced Metadata Filtering** — allow filtering by book, chapter, narrator, keyword, etc.
+* 🧰 **Index Management Tools** — CLI utilities for rebuilds, inspection, and updates
+* ☁️ **Deployment Templates** — Docker and Hugging Face Spaces support
+* * 🖥️ **Web Interface (Streamlit)** — deploy a user-friendly interface for semantic hadith search
 
 ---
 
